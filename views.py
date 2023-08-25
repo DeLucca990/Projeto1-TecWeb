@@ -1,5 +1,5 @@
 from urllib.parse import unquote_plus
-from utils import load_data, load_template, add_note, build_response
+from utils import load_template, build_response
 from database import Database, Note
 
 db = Database('./data/banco_projeto')
@@ -16,9 +16,9 @@ def update(request):
     request = request.replace('\r', '')
     partes = request.split('\n\n')
     corpo = partes[1]
-    note_id = corpo.split('&')[0].split('=')[1]
-    title = corpo.split('&')[1].split('=')[1].replace('+', ' ')
-    content = corpo.split('&')[2].split('=')[1].replace('+', ' ')
+    note_id = unquote_plus(corpo.split('&')[0]).split('=')[1]
+    title = unquote_plus(corpo.split('&')[1].split('=')[1]).replace('+', ' ')
+    content = unquote_plus(corpo.split('&')[2].split('=')[1]).replace('+', ' ')
     db.update(Note(id=note_id, title=title, content=content))
     return build_response(code=303, reason='See Other', headers='Location: /')
 

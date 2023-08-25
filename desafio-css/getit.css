@@ -262,10 +262,10 @@ body {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease-in-out;
 }
 .delete:hover{
-  transform: rotate(20deg);
+  transform: rotate(20deg) scale(1.2);
 }
 .delete-button {
   position: absolute;
@@ -283,11 +283,11 @@ body {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease-in-out;
 }
 
 .edit:hover{
-  transform: rotate(-20deg);
+  transform: rotate(-20deg) scale(1.2);
 }
 
 .edit-button {
