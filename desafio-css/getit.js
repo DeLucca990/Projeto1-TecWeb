@@ -28,3 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     )} card-rotation-${getRandomInt(1, 11)}`;
   }
 });
+
+// Cria uma instância do Sortable para a lista ordenável
+const sortableList = new Sortable(document.getElementById('sortable-list'), {
+  animation: 150, // Duração da animação em milissegundos
+  handle: '.sortable-card', // Elemento usado para arrastar o cartão
+  draggable: '.sortable-card', // Elementos que podem ser arrastados
+});

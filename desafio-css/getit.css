@@ -298,3 +298,7 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.sortable-card {
+  opacity: 1; /* Garante que a opacidade seja 100% */
+}
