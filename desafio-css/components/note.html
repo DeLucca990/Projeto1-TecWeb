@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <li>
+    <div class="card">
+        <h3 class="card-title">{title}</h3>
+        <div class="card-content">
+          <p>{details}</p>
+          <form action="/delete" method="post">
+            <input type="hidden" name="id" value="{id}">
+            <button type="submit" class="delete-button">
+                <img src="../../img/trash-icon.png" alt="delete" class="delete">
+            </button>
+          </form>
+          <form action="/edit" method="post">
+            <input type="hidden" name="id" value="{id}">
+            <button type="submit" class="edit-button">
+              <img src="../../img/edit-icon.png" alt="edit" class="edit">
+            </button>
+          </form>
+        </div>
+    </div>
+</li>
+</body>
+</html>
