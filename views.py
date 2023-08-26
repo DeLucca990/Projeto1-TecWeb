@@ -30,6 +30,9 @@ def delete(request):
     db.delete(note_id)
     return build_response(code=303, headers='Location: /')
 
+def not_found(request):
+    return build_response(code=404, reason='Not Found', body=load_template('error.html'))
+
 def index(request):
     # A string de request sempre começa com o tipo da requisição (ex: GET, POST)
     if request.startswith('POST'):
