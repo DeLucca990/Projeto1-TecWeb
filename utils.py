@@ -10,7 +10,7 @@ def read_file(file_path):
 
 def load_template(filename):
     current_dir = os.path.dirname(__file__)
-    file_path = os.path.join(current_dir, 'desafio-css', filename)
+    file_path = os.path.join(current_dir, 'templates', filename)
     with open(file_path, 'r', encoding='utf-8') as file:
         data = file.read()
     return data
