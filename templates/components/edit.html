@@ -17,10 +17,12 @@
         />
         <link rel="stylesheet" href="templates/getit.css" />
     </head>
-    <body class="background">
+    <body>
     <div class="appbar">
         <img src="../../img/logo-getit.png" class="logo" />
         <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+        <input type="checkbox" id="darkmode-toggle" class="input-dark"/>
+        <label for="darkmode-toggle"></label>
     </div>
     <main class="container">
         <form class="form-card" method="post" action="/update">
@@ -41,6 +43,6 @@
             <button class="btn" type="button" onclick="window.location.href='/'">Cancelar</button>
         </form>
     </main>
-    <script src="../getit.js"></script>
+    <script type="text/javascript" src="/templates/getit.js"></script>
     </body>
 </html>

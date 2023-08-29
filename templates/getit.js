@@ -30,16 +30,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Cria uma instância do Sortable para a lista ordenável
-const sortableList = new Sortable(document.getElementById('sortable-list'), {
-  animation: 150, // Duração da animação em milissegundos
-  handle: '.sortable-card', // Elemento usado para arrastar o cartão
-  draggable: '.sortable-card', // Elementos que podem ser arrastados
-});
+try {
+  const sortableList = new Sortable(document.getElementById('sortable-list'), {
+    animation: 150, // Duração da animação em milissegundos
+    handle: '.sortable-card', // Elemento usado para arrastar o cartão
+    draggable: '.sortable-card', // Elementos que podem ser arrastados
+  });
+} catch (error) {
+  console.log('erro');  
+}
+
 
 // Adicionando Dark Mode
 const darkModeToggle = document.getElementById("darkmode-toggle");
-const background = document.querySelector(".background");
-const bnt = document.querySelector(".btn");
+const background = document.querySelector("body");
+const btn = document.querySelectorAll(".btn");
 const form_card = document.querySelector(".form-card");
 const textarea = document.querySelector(".autoresize");
 const form_card_title = document.querySelector(".form-card-title");
@@ -54,7 +59,8 @@ function applyDarkModeStyles() {
   textarea.classList.add("dark-mode-text");
   form_card_title.classList.add("dark-mode-text");
   appbar.style.backgroundColor = "#d4aa02";
-  bnt.style.backgroundColor = "#d4aa02";
+  btn[0].style.backgroundColor = "#d4aa02";
+  btn[1].style.backgroundColor = "#d4aa02";
 }
 
 // Função para remover os estilos do modo noturno
@@ -66,7 +72,8 @@ function removeDarkModeStyles() {
   textarea.classList.remove("dark-mode-text");
   form_card_title.classList.remove("dark-mode-text");
   appbar.style.backgroundColor = "#f7d736";
-  bnt.style.backgroundColor = "#f7d736";
+  btn[0].style.backgroundColor = "#f7d736";
+  btn[1].style.backgroundColor = "#f7d736";
 }
 
 // Verifica se o modo noturno foi ativado anteriormente
