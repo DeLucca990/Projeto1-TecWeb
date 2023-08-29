@@ -1,5 +1,5 @@
 # Projeto 1 TecWeb
-## Demostração:
+## Demonstração:
 <center><img src="img/demostracao.gif"  style="float: center; margin: 0px 0px 10px 10px"></center>
 
 ## JavaScript:
