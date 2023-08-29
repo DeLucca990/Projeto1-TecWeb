@@ -19,10 +19,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
   </head>
 
-  <body>
+  <body class="background">
     <div class="appbar">
       <img src="../img/logo-getit.png" class="logo" />
       <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+      <input type="checkbox" id="darkmode-toggle" class="input-dark"/>
+      <label for="darkmode-toggle">
     </div>
 
     <main class="container">
@@ -45,6 +47,7 @@
         <ul class="card-container" id="sortable-list">
           {notes}
         </ul>
+    </main>
     <script type="text/javascript" src="templates/getit.js"></script>
   </body>
 </html>

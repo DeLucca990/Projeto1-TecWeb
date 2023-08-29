@@ -35,3 +35,56 @@ const sortableList = new Sortable(document.getElementById('sortable-list'), {
   handle: '.sortable-card', // Elemento usado para arrastar o cartão
   draggable: '.sortable-card', // Elementos que podem ser arrastados
 });
+
+// Adicionando Dark Mode
+const darkModeToggle = document.getElementById("darkmode-toggle");
+const background = document.querySelector(".background");
+const bnt = document.querySelector(".btn");
+const form_card = document.querySelector(".form-card");
+const textarea = document.querySelector(".autoresize");
+const form_card_title = document.querySelector(".form-card-title");
+const appbar = document.querySelector(".appbar");
+
+// Função para aplicar os estilos do modo noturno
+function applyDarkModeStyles() {
+  background.classList.add("dark-mode-background");
+  form_card.classList.add("dark-mode-background");
+  textarea.classList.add("dark-mode-background");
+  form_card_title.classList.add("dark-mode-background");
+  textarea.classList.add("dark-mode-text");
+  form_card_title.classList.add("dark-mode-text");
+  appbar.style.backgroundColor = "#d4aa02";
+  bnt.style.backgroundColor = "#d4aa02";
+}
+
+// Função para remover os estilos do modo noturno
+function removeDarkModeStyles() {
+  background.classList.remove("dark-mode-background");
+  form_card.classList.remove("dark-mode-background");
+  textarea.classList.remove("dark-mode-background");
+  form_card_title.classList.remove("dark-mode-background");
+  textarea.classList.remove("dark-mode-text");
+  form_card_title.classList.remove("dark-mode-text");
+  appbar.style.backgroundColor = "#f7d736";
+  bnt.style.backgroundColor = "#f7d736";
+}
+
+// Verifica se o modo noturno foi ativado anteriormente
+const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+// Aplica os estilos de acordo com o status anterior
+if (isDarkMode) {
+    darkModeToggle.checked = true;
+    applyDarkModeStyles();
+}
+
+// Listener para alterações no botão de alternância
+darkModeToggle.addEventListener("change", () => {
+    if (darkModeToggle.checked) {
+        applyDarkModeStyles();
+        localStorage.setItem("darkMode", "true"); // Armazena no localStorage
+    } else {
+        removeDarkModeStyles();
+        localStorage.setItem("darkMode", "false"); // Armazena no localStorage
+    }
+});
