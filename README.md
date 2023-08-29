@@ -3,7 +3,7 @@
 <center><img src="img/demostracao.gif"  style="float: center; margin: 0px 0px 10px 10px"></center>
 
 ## JavaScript:
-Foi implementada a funcionalidade de mover os cards dentro da página. Basta clicar e segurar em cima do card e arrastar para a posição desejada.
+Foi implementada a funcionalidade de mover os cards dentro da página e o dark mode. 
 
 ## Extras:
 Para executar:
