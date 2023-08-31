@@ -44,7 +44,8 @@ try {
 // Adicionando Dark Mode
 const darkModeToggle = document.getElementById("darkmode-toggle");
 const background = document.querySelector("body");
-const btn = document.querySelectorAll(".btn");
+const btn = document.querySelector(".btn");
+const btn2 = document.querySelector(".btn2");
 const form_card = document.querySelector(".form-card");
 const textarea = document.querySelector(".autoresize");
 const form_card_title = document.querySelector(".form-card-title");
@@ -59,9 +60,12 @@ function applyDarkModeStyles() {
   textarea.classList.add("dark-mode-text");
   form_card_title.classList.add("dark-mode-text");
   appbar.style.backgroundColor = "#d4aa02";
-  btn[0].style.backgroundColor = "#d4aa02";
-  btn[1].style.backgroundColor = "#d4aa02";
-}
+  btn.style.backgroundColor = "#d4aa02";
+  try {
+    btn2.style.backgroundColor = "#d4aa02";
+  }
+  catch (error) {
+}}
 
 // Função para remover os estilos do modo noturno
 function removeDarkModeStyles() {
@@ -72,9 +76,12 @@ function removeDarkModeStyles() {
   textarea.classList.remove("dark-mode-text");
   form_card_title.classList.remove("dark-mode-text");
   appbar.style.backgroundColor = "#f7d736";
-  btn[0].style.backgroundColor = "#f7d736";
-  btn[1].style.backgroundColor = "#f7d736";
-}
+  btn.style.backgroundColor = "#f7d736";
+  try {
+    btn2.style.backgroundColor = "#f7d736";
+  }
+  catch (error) {
+}}
 
 // Verifica se o modo noturno foi ativado anteriormente
 const isDarkMode = localStorage.getItem("darkMode") === "true";
